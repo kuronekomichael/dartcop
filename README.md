@@ -12,7 +12,7 @@ You need install [Dart SDK](https://www.dartlang.org/install) and then add `dart
 ```bash
 curl --remote-name -L https://github.com/kuronekomichael/dartcop/raw/master/src/dartcop.py
 chmod +x dartcop.py
-mv ip.py /usr/local/bin/dartcop
+mv dartcop.py /usr/local/bin/dartcop
 ```
 
 ## Usage
