@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import sys
+import xml.etree.ElementTree as ET
 
 VERSION = '0.0.1'
 
@@ -8,9 +9,38 @@ def perror(*args):
   sys.stderr.write(*args)
   sys.stderr.write('\n')
 
-def line2element(string):
-  #TODO
-  return ''
+def output2xml(strings):
+  # 行単位にパースして辞書形式にする
+  dicts = [read_line(line) for line in strings.split('\n') if line != '']
+
+  # 同ファイル名毎にリスト化
+  files = {}
+  for dic in dicts:
+    if dic['file'] not in files:
+      files[dic['file']] = []
+    files[dic['file']].append(dic)
+
+  # XMLのツリーに変換
+  root = ET.Element('checkstyle')
+  for file in files.keys():
+      file_element = ET.SubElement(root, 'file', attrib={'name':file})
+      for dic in files[file]:
+        file_element.append(line2element(dic))
+
+  return root
+
+def read_line(line):
+  result = dict(zip(['severity', 'type', 'source', 'file', 'line', 'column', 'message_type', 'message'], line.split('|')))
+  result['severity'] = result['severity'].lower()
+  return result
+
+def line2element(dic):
+  """
+  <error line='15' column='50' severity='info' message='Avoid using braces in interpolation when not needed.' source='unnecessary_brace_in_string_interps'/>
+  """
+  attributes = {k: v for k, v in dic.items() if k in ['line', 'column', 'severity', 'message', 'source']}
+  element = ET.Element('error', attrib=attributes)
+  return element
 
 # Help
 def show_help():
