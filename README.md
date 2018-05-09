@@ -7,6 +7,11 @@ Simple `dartanalyzer` wrapper convert to [CheckStyle](http://checkstyle.sourcefo
 
 You need install [Dart SDK](https://www.dartlang.org/install) and then add `dartanalyzer` to your path.
 
+```bash:sample
+# Add path to ~/.bash_profile
+echo -e '\nPATH=/path/to/dart-sdk/bin/:$PATH' >> ~/.bash_profile
+```
+
 ## Install
 
 ```bash
@@ -20,8 +25,6 @@ mv dartcop.py /usr/local/bin/dartcop
 Make [CheckStyle](http://checkstyle.sourceforge.net/) formated xml.
 
 ```bash
-PATH=~/github/flutter/flutter/bin/cache/dart-sdk/bin/:$PATH
-
 # Same `dartanalyzer --options analysis_options.yaml .`
 dartcop --options analysis_options.yaml .
 ```
