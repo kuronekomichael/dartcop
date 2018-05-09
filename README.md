@@ -7,7 +7,7 @@ Simple `dartanalyzer` wrapper convert to [CheckStyle](http://checkstyle.sourcefo
 
 You need install [Dart SDK](https://www.dartlang.org/install) and then add `dartanalyzer` to your path.
 
-```bash:sample
+```bash
 # Add path to ~/.bash_profile
 echo -e '\nPATH=/path/to/dart-sdk/bin/:$PATH' >> ~/.bash_profile
 ```
@@ -31,7 +31,7 @@ dartcop --options analysis_options.yaml .
 
 ### Output sample
 
-```xml:Sample output
+```xml
 <?xml version='1.0'?>
 <checkstyle>
   <file name='/Users/a12486/code/github/flutter/todomvc/lib/screen/main.dart'>
