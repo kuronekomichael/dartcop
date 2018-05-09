@@ -1,0 +1,3 @@
+INFO|LINT|unnecessary_brace_in_string_interps|/Users/tron/github/flutter/github-grass/lib/api/github.dart|15|50|11|Avoid using braces in interpolation when not needed.
+INFO|LINT|prefer_expression_function_bodies|/Users/tron/github/flutter/github-grass/lib/pages/home.dart|64|38|733|Use => for short members whose body is a single return statement.
+INFO|LINT|unnecessary_brace_in_string_interps|/Users/tron/github/flutter/github-grass/lib/pages/home.dart|116|47|8|Avoid using braces in interpolation when not needed.

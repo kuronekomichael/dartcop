@@ -1,0 +1,10 @@
+<?xml version='1.0'?>
+<checkstyle>
+  <file name='/Users/tron/github/flutter/github-grass/lib/api/github.dart'>
+    <error line='15' column='50' severity='info' message='Avoid using braces in interpolation when not needed.' source='unnecessary_brace_in_string_interps'/>
+    <error line='64' column='38' severity='info' message='Use => for short members whose body is a single return statement.' source='prefer_expression_function_bodies'/>
+  </file>
+  <file name='/Users/tron/github/flutter/github-grass/lib/pages/home.dart'>
+    <error line='116' column='47' severity='info' message='Avoid using braces in interpolation when not needed.' source='unnecessary_brace_in_string_interps'/>
+  </file>
+</checkstyle>

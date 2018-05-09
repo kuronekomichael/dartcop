@@ -10,7 +10,7 @@ You need install [Dart SDK](https://www.dartlang.org/install) and then add `dart
 ## Install
 
 ```bash
-curl --remote-name -L https://github.com/kuronekomichael/dartcop/raw/master/src/dartcop.py
+curl --remote-name -L https://github.com/kuronekomichael/dartcop/raw/master/src/dartcop/dartcop.py
 chmod +x dartcop.py
 mv dartcop.py /usr/local/bin/dartcop
 ```
