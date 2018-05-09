@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 import sys
 import xml.etree.ElementTree as ET
+import subprocess
 
 VERSION = '0.0.1'
 
@@ -64,7 +65,15 @@ def main(argv):
     show_help()
     exit(0)
 
-  #TODO
+  #TODO: Must set '--format=machine' anyway
+
+  try:
+    ret = subprocess.check_output(['dartanalyzer', '--format=machine'] + argv, stderr=subprocess.STDOUT)
+  except subprocess.CalledProcessError as cpe:
+    ret = cpe.output
+
+  xml = output2xml(ret.decode('utf-8'))
+  print(ET.tostring(xml, encoding='unicode'))
   exit(1)
 
 if __name__ == '__main__':

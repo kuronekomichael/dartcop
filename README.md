@@ -21,6 +21,7 @@ Make [CheckStyle](http://checkstyle.sourceforge.net/) formated xml.
 
 ```bash
 # Same `dartanalyzer --options analysis_options.yaml .`
+PATH=~/github/flutter/flutter/bin/cache/dart-sdk/bin/:$PATH
 dartcop --options analysis_options.yaml .
 ```
 
