@@ -72,7 +72,10 @@ def main(argv):
     perror('dartanalyzer not found. Install Dart SDK and add it to PATH.')
     exit(1)
 
-  #TODO: Must set '--format=machine' anyway
+  if any([v == '--format=human' for v in argv]):
+    perror('ERROR!!')
+    perror('Cannot set --format=human.')
+    exit(1)
 
   try:
     ret = subprocess.check_output(['dartanalyzer', '--format=machine'] + argv, stderr=subprocess.STDOUT)
