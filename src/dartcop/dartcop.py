@@ -65,6 +65,13 @@ def main(argv):
     show_help()
     exit(0)
 
+  try:
+    subprocess.check_output(['which', 'dartanalyzer'], stderr=subprocess.STDOUT)
+  except subprocess.CalledProcessError as cpe:
+    perror('ERROR!!')
+    perror('dartanalyzer not found. Install Dart SDK and add it to PATH.')
+    exit(1)
+
   #TODO: Must set '--format=machine' anyway
 
   try:
@@ -74,7 +81,7 @@ def main(argv):
 
   xml = output2xml(ret.decode('utf-8'))
   print(ET.tostring(xml, encoding='unicode'))
-  exit(1)
+  exit(0)
 
 if __name__ == '__main__':
   main(sys.argv[1:])
